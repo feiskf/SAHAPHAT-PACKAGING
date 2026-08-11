@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAHAPHAT PACKAGING — กล่องกระดาษคุณภาพสูง</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:wght@400;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #1A5276;
+    --gold-light: #2980B9;
+    --dark: #FFFFFF;
+    --dark2: #F4F6F8;
+    --dark3: #EAF0F6;
+    --cream: #1A252F;
+    --cream2: #2C3E50;
+    --text-muted: #7F8C8D;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+html {
+  overflow-x: hidden;
+}
+  body {
+    background: var(--dark);
+    color: var(--cream);
+    font-family: 'IBM Plex Sans Thai', 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 { font-family: 'Cormorant Garant', 'IBM Plex Sans Thai', serif; }
+  .lang-en { display: none; }
+  body.en .lang-th { display: none; }
+  body.en .lang-en { display: block; }
+  span.lang-en { display: none; }
+  span.lang-th { display: inline; }
+  body.en span.lang-th { display: none; }
+  body.en span.lang-en { display: inline; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.5rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background 0.4s, backdrop-filter 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(26,82,118,0.15);
+  }
+  .logo {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .logo span { color: var(--cream); }
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+  .nav-links a {
+    color: var(--cream2);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .lang-btn {
+    background: transparent;
+    border: 1px solid rgba(26,82,118,0.4);
+    color: #1A5276;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .lang-btn:hover { background: #1A5276; color: #FFFFFF; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 1.5px; background: var(--cream); transition: all 0.3s; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 7rem 5% 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #F4F8FC 0%, #EAF2FB 50%, #F4F8FC 100%);
+  }
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(26,82,118,0.05) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(26,82,118,0.05) 60px);
+    opacity: 0.8;
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(26,82,118,0.07) 0%, transparent 70%);
+    top: 50%; left: 60%; transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 700px; }
+  .hero-eyebrow {
+    font-size: 0.75rem; letter-spacing: 0.25em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 40px; height: 1px; background: #1A5276;
+  }
+  h1.hero-title {
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+  h1.hero-title em { color: var(--gold); font-style: normal; }
+  .hero-sub {
+    font-size: 1.05rem; color: var(--text-muted); max-width: 500px;
+    margin-bottom: 2.5rem; line-height: 1.8;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #1A5276;
+    color: #FFFFFF;
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    display: inline-block;
+    border: 1px solid rgba(26,82,118,0.5);
+    color: #1A5276;
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    margin-left: 1rem;
+  }
+  .btn-outline:hover { border-color: #1A5276; background: rgba(26,82,118,0.08); }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 3rem;
+  }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 2.5rem; font-weight: 700;
+    color: var(--gold); line-height: 1;
+  }
+  .stat-label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.1em; }
+
+  /* SECTIONS */
+  section { padding: 7rem 5%; }
+  .section-label {
+    font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::before { content: ''; width: 30px; height: 1px; background: #1A5276; }
+  h2.section-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700; color: var(--cream); line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  h2.section-title em { color: var(--gold); font-style: normal; }
+  .section-desc { color: var(--text-muted); max-width: 520px; line-height: 1.85; }
+  .divider { width: 60px; height: 1px; background: #1A5276; margin: 2rem 0; }
+
+  /* ABOUT */
+  #about { background: var(--dark2); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    margin-top: 4rem;
+  }
+  .about-visual {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-box-visual {
+    width: 280px; height: 280px;
+    border: 1px solid rgba(26,82,118,0.3);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .about-box-visual::before {
+    content: '';
+    position: absolute; inset: 12px;
+    border: 1px solid rgba(26,82,118,0.15);
+  }
+  .box-icon {
+    font-size: 5rem; opacity: 0.6;
+    font-family: 'Cormorant Garant', serif;
+    color: var(--gold); font-weight: 700;
+    letter-spacing: -0.05em;
+  }
+  .about-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    width: 120px; height: 120px;
+    background: #1A5276;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: #FFFFFF;
+  }
+  .about-badge .num {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 2.5rem; font-weight: 700; line-height: 1;
+  }
+  .about-badge .txt { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-align: center; }
+  .about-features { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .about-feat {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(26,82,118,0.12);
+    background: rgba(26,82,118,0.03);
+  }
+  .feat-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: rgba(26,82,118,0.1);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1rem;
+  }
+  .feat-text h4 { font-size: 0.9rem; font-weight: 600; color: var(--cream); margin-bottom: 0.2rem; }
+  .feat-text p { font-size: 0.82rem; color: var(--text-muted); }
+
+  /* PRODUCTS */
+  #products { background: var(--dark); }
+  .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; }
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; }
+  .product-card {
+    background: var(--dark3);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s;
+    border: 1px solid rgba(26,82,118,0.12);
+  }
+  .product-card:hover { background: var(--dark2); border-color: rgba(26,82,118,0.35); }
+  .product-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: #1A5276;
+    transition: width 0.4s;
+  }
+  .product-card:hover::after { width: 100%; }
+  .product-num {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 3.5rem; font-weight: 700;
+    color: rgba(201,168,76,0.4); line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .product-card h3 {
+    font-size: 1.3rem; font-weight: 600; color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+  .product-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; }
+  .product-tag {
+    display: inline-block; margin-top: 1.5rem;
+    font-size: 0.7rem; letter-spacing: 0.15em;
+    color: var(--gold); text-transform: uppercase;
+  }
+
+  /* WHY US */
+  #why { background: var(--dark2); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; align-items: start; }
+  .why-list { display: flex; flex-direction: column; gap: 0; }
+  .why-item {
+    display: flex; gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(26,82,118,0.1);
+    transition: all 0.3s;
+  }
+  .why-item:hover { padding-left: 0.5rem; }
+  .why-num {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.8rem; font-weight: 700;
+    color: rgba(201,168,76,0.3); line-height: 1; flex-shrink: 0;
+    width: 36px; text-align: right;
+  }
+  .why-content h4 { font-size: 1rem; font-weight: 600; color: var(--cream); margin-bottom: 0.4rem; }
+  .why-content p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.75; }
+  .why-highlight {
+    background: rgba(26,82,118,0.05);
+    border: 1px solid rgba(26,82,118,0.2);
+    padding: 3rem 2.5rem;
+    position: sticky; top: 8rem;
+  }
+  .why-highlight blockquote {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.8rem; font-weight: 600;
+    color: var(--cream); line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  .why-highlight blockquote em { color: var(--gold); font-style: normal; }
+  .why-highlight p { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* CONTACT */
+  #contact { background: var(--dark); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; margin-top: 4rem; }
+  .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+  .contact-item { display: flex; flex-direction: column; gap: 0.3rem; }
+  .contact-item .c-label {
+    font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase;
+  }
+  .contact-item .c-value { font-size: 1rem; color: var(--cream); }
+  .contact-item .c-sub { font-size: 0.82rem; color: var(--text-muted); }
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-group label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.1em; }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: var(--dark2);
+    border: 1px solid rgba(26,82,118,0.15);
+    color: var(--cream);
+    padding: 0.9rem 1rem;
+    font-size: 0.9rem;
+    font-family: 'IBM Plex Sans Thai', 'IBM Plex Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: rgba(26,82,118,0.5); }
+  .form-group textarea { resize: vertical; min-height: 130px; }
+  .form-group select option { background: var(--dark2); }
+  .form-note { font-size: 0.78rem; color: var(--text-muted); }
+  .success-msg { display: none; color: var(--gold); font-size: 0.9rem; padding: 1rem; border: 1px solid rgba(26,82,118,0.3); }
+
+  /* MAP PLACEHOLDER */
+  .map-placeholder {
+    margin-top: 3rem;
+    background: var(--dark2);
+    border: 1px solid rgba(26,82,118,0.15);
+    height: 220px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+    color: var(--text-muted); font-size: 0.85rem;
+  }
+  .map-placeholder svg { opacity: 0.4; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark2);
+    border-top: 1px solid rgba(26,82,118,0.15);
+    padding: 3rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-copy { font-size: 0.8rem; color: var(--text-muted); }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.8rem; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-social { display: flex; gap: 1rem; }
+  .social-btn {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(26,82,118,0.2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); text-decoration: none;
+    font-size: 0.75rem; font-weight: 600;
+    transition: all 0.3s;
+  }
+  .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* SCROLL ANIMATIONS */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--dark); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; z-index: 99; }
+    .nav-links.open { display: flex; }
+    .nav-links a { font-size: 1.2rem; }
+    .hamburger { display: flex; z-index: 101; }
+    .hero-stats { position: static; display: flex; gap: 2rem; margin-top: 3rem; }
+    .about-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .products-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .about-visual { display: none; }
+    .products-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    h1.hero-title { font-size: 2.8rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 600px) {
+    .products-grid { grid-template-columns: 1fr; }
+    section { padding: 5rem 5%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="logo">SAHAPHAT <span>PACKAGING</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about"><span class="lang-th">เกี่ยวกับเรา</span><span class="lang-en">About</span></a>
+    <a href="#products"><span class="lang-th">สินค้า</span><span class="lang-en">Products</span></a>
+    <a href="#why"><span class="lang-th">ทำไมต้องเรา</span><span class="lang-en">Why Us</span></a>
+    <a href="#contact"><span class="lang-th">ติดต่อเรา</span><span class="lang-en">Contact</span></a>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+<img src="images/P1.png" style="
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+    z-index: 1;
+  ">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="lang-th">ผู้ผลิตกล่องกระดาษลูกฟูก</span>
+      <span class="lang-en">Corrugated Packaging Manufacturer</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="lang-th">
+        บรรจุภัณฑ์<br><em>สำหรับ</em><br>ธุรกิจทุกขนาด
+      </span>
+      <span class="lang-en">
+        Packaging<br><em>for</em><br>Every Business
+      </span>
+    </h1>
+    <p class="hero-sub">
+      <span class="lang-th">รับผลิตกล่องกระดาษลูกฟูกสำหรับสินค้าและแพ็กสินค้า
+พร้อมช่วยแนะนำขนาด วัสดุ และงานพิมพ์ให้เหมาะกับการใช้งานจริง</span>
+      <span class="lang-en">We manufacture corrugated boxes for products and packaging, with guidance on sizing, materials, and printing to match real-world usage.</span>
+    </p>
+    <div>
+      <a href="#contact" class="btn-primary">
+        <span class="lang-th">ขอใบเสนอราคา</span>
+        <span class="lang-en">Request a Quote</span>
+      </a>
+      <a href="#products" class="btn-outline">
+        <span class="lang-th">ดูสินค้า</span>
+        <span class="lang-en">View Products</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">30+</div>
+        <div class="stat-label lang-th">ปีประสบการณ์</div>
+        <div class="stat-label lang-en">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label lang-th">ลูกค้าไว้วางใจ</div>
+        <div class="stat-label lang-en">Trusted Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1M+</div>
+        <div class="stat-label lang-th">กล่องต่อปี</div>
+        <div class="stat-label lang-en">Boxes / Year</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label reveal">
+    <span class="lang-th">เกี่ยวกับเรา</span>
+    <span class="lang-en">About Us</span>
+  </div>
+  <div class="about-grid">
+    <div>
+      <h2 class="section-title reveal">
+        <span class="lang-th">ผลิตกล่อง<br><em>ด้วยความใส่ใจ</em></span>
+        <span class="lang-en">Packaging<br><em>With Precision</em></span>
+      </h2>
+      <div class="divider"></div>
+      <p class="section-desc reveal">
+        <span class="lang-th">เราคือผู้ผลิตกล่องกระดาษที่เริ่มต้นจากความตั้งใจจริง แม้บริษัทจะก่อตั้งในปี 2561 แต่เรามีเบื้องหลังเป็นประสบการณ์จากรุ่นสู่รุ่นที่ยาวนานกว่า 30 ปี เรานำความเชี่ยวชาญเหล่านั้นมาดูแลลูกค้าทุกท่านด้วยความใส่ใจ เพื่อส่งมอบบรรจุภัณฑ์คุณภาพดีในราคาที่เหมาะสมให้กับธุรกิจทั่วไทย</span>
+        <span class="lang-en">We are a cardboard box manufacturer built on genuine dedication. Although our company was officially established in 2018, our foundation is rooted in over 30 years of generational expertise. We bring this deep knowledge to care for every customer with utmost attention, delivering high-quality packaging at reasonable prices to businesses across Thailand.</span>
+      </p>
+      <div class="about-features">
+        <div class="about-feat reveal reveal-delay-1">
+          <div class="feat-icon">◈</div>
+          <div class="feat-text">
+            <h4><span class="lang-th">วัสดุคุณภาพสูง</span><span class="lang-en">Premium Materials</span></h4>
+            <p><span class="lang-th">คัดสรรวัตถุดิบจากแหล่งที่เชื่อถือได้ มาตรฐานสากล</span><span class="lang-en">Sourced from certified suppliers with international quality standards.</span></p>
+          </div>
+        </div>
+        <div class="about-feat reveal reveal-delay-2">
+          <div class="feat-icon">◉</div>
+          <div class="feat-text">
+            <h4><span class="lang-th">ออกแบบตามความต้องการ</span><span class="lang-en">Custom Design</span></h4>
+            <p><span class="lang-th">รับออกแบบกล่องตามสเปกของลูกค้า ทุกขนาด ทุกรูปทรง</span><span class="lang-en">Custom-designed to your specifications — any size, any shape.</span></p>
+          </div>
+        </div>
+        <div class="about-feat reveal reveal-delay-3">
+          <div class="feat-icon">◆</div>
+          <div class="feat-text">
+            <h4><span class="lang-th">ส่งตรงเวลา</span><span class="lang-en">On-Time Delivery</span></h4>
+            <p><span class="lang-th">ระบบโลจิสติกส์ที่มีประสิทธิภาพ รับประกันการส่งมอบตรงเวลา</span><span class="lang-en">Efficient logistics system with guaranteed on-time delivery.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-box-visual">
+<img src="images/P8.jpg" style="width:100%; height:100%; object-fit:cover; border: 4px solid #1A5276;">
+        <div class="about-badge">
+          <div class="num">30</div>
+          <div class="txt lang-th">ปีแห่ง<br>ความเชี่ยวชาญ</div>
+          <div class="txt lang-en">Years of<br>expertise</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-header">
+    <div>
+      <div class="section-label reveal">
+        <span class="lang-th">สินค้าของเรา</span>
+        <span class="lang-en">Our Products</span>
+      </div>
+      <h2 class="section-title reveal">
+        <span class="lang-th">กล่อง<em>ทุกประเภท</em></span>
+        <span class="lang-en">Every Box <em>You Need</em></span>
+      </h2>
+    </div>
+  </div>
+  <div class="products-grid">
+    <div class="product-card reveal">
+      <div class="product-num">01</div>
+  <img src="images/P2.png" style="width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+      <h3><span class="lang-th">กล่องลูกฟูก</span><span class="lang-en">Corrugated Box</span></h3>
+      <p><span class="lang-th">กล่องลูกฟูกมาตรฐาน แข็งแรง ทนทาน เหมาะสำหรับการขนส่งและจัดเก็บสินค้าทุกประเภท</span><span class="lang-en">Standard corrugated boxes — strong and durable, ideal for shipping and storage of all product types.</span></p>
+      <span class="product-tag"><span class="lang-th">สต็อกพร้อมส่	ง</span><span class="lang-en">Ready Stock</span> →</span>
+    </div>
+    <div class="product-card reveal reveal-delay-1">
+      <div class="product-num">02</div>
+ <img src="images/P3.png" style="width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+      <h3><span class="lang-th">กล่องพิมพ์โลโก้</span><span class="lang-en">Custom Printed Box</span></h3>
+      <p><span class="lang-th">พิมพ์โลโก้และลวดลายตามแบรนด์ของคุณ เพิ่มความน่าเชื่อถือและภาพลักษณ์ให้ธุรกิจ</span><span class="lang-en">Print your brand logo and design to strengthen brand identity and professional image.</span></p>
+      <span class="product-tag"><span class="lang-th">สั่งผลิตพิเศษ</span><span class="lang-en">Custom Order</span> →</span>
+    </div>
+    <div class="product-card reveal reveal-delay-2">
+      <div class="product-num">03</div>
+ <img src="images/P6.png" style="width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+      <h3><span class="lang-th">กล่องของขวัญ</span><span class="lang-en">Gift Box</span></h3>
+      <p><span class="lang-th">กล่องของขวัญสวยงาม เหมาะสำหรับสินค้า Premium สร้างความประทับใจแรกให้ผู้รับ</span><span class="lang-en">Elegant gift packaging for premium products — designed to create lasting first impressions.</span></p>
+      <span class="product-tag"><span class="lang-th">ดีไซน์พรีเมียม</span><span class="lang-en">Premium Design</span> →</span>
+    </div>
+    <div class="product-card reveal reveal-delay-3">
+      <div class="product-num">04</div>
+  <img src="images/P7.png" style="width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+      <h3><span class="lang-th">กล่องอาหาร</span><span class="lang-en">Food Grade Box</span></h3>
+      <p><span class="lang-th">กล่องบรรจุอาหาร ผ่านมาตรฐานความปลอดภัย ไม่มีสารเคมีอันตราย รับรองโดยหน่วยงานที่เกี่ยวข้อง</span><span class="lang-en">Food-safe packaging, free from harmful chemicals and certified by relevant authorities.</span></p>
+      <span class="product-tag"><span class="lang-th">Food Safe</span><span class="lang-en">Food Safe Certified</span> →</span>
+    </div>
+    <div class="product-card reveal reveal-delay-2">
+      <div class="product-num">05</div>
+  <img src="images/P4.png" style="width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+      <h3><span class="lang-th">กล่องอีคอมเมิร์ซ</span><span class="lang-en">E-Commerce Box</span></h3>
+      <p><span class="lang-th">ออกแบบเฉพาะสำหรับการส่งของออนไลน์ เปิดง่าย สวยงาม เหมาะสำหรับร้านค้าออนไลน์</span><span class="lang-en">Purpose-built for online retail — easy to open, presentable, and optimized for e-commerce shipping.</span></p>
+      <span class="product-tag"><span class="lang-th">ยอดนิยม</span><span class="lang-en">Most Popular</span> →</span>
+    </div>
+    <div class="product-card reveal reveal-delay-3">
+      <div class="product-num">06</div>
+  <img src="images/P5.png" style="width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+      <h3><span class="lang-th">กล่องอุตสาหกรรม</span><span class="lang-en">Industrial Box</span></h3>
+      <p><span class="lang-th">กล่องขนาดใหญ่สำหรับอุตสาหกรรม รับน้ำหนักได้มาก ทนทานต่อสภาพแวดล้อมที่หลากหลาย</span><span class="lang-en">Heavy-duty large format boxes for industrial use, engineered to withstand demanding environments.</span></p>
+      <span class="product-tag"><span class="lang-th">Heavy Duty</span><span class="lang-en">Heavy Duty Grade</span> →</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  #process .process-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 120px;
+  }
+
+  #process .process-step {
+    text-align: center;
+  }
+
+  #process .step-num {
+    width: 70px;
+    height: 70px;
+    border: 1px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  #process .process-step p {
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    #process .process-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  }
+</style>
+
+<style>
+  /* PROCESS SECTION ONLY */
+  #process{
+    background:#0f4c75;
+    color:#fff;
+    padding:100px 40px;
+  }
+
+  /* หัวข้อเล็ก */
+  #process .section-label{
+    color:rgba(255,255,255,.7);
+    letter-spacing:2px;
+    margin-bottom:20px;
+    font-size:14px;
+  }
+
+  /* หัวข้อใหญ่ */
+  #process .section-title{
+    color:#ffffff;
+    font-size:72px;
+    line-height:1.05;
+    font-weight:700;
+    margin-bottom:20px;
+  }
+
+  /* คำว่า ไม่ยุ่งยาก */
+  #process .section-title em{
+    color:#8fd3ff;
+    font-style:normal;
+  }
+
+  #process .process-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:80px 120px;
+    margin-top:80px;
+  }
+
+  #process .process-step{
+    text-align:center;
+  }
+
+  #process .step-num{
+    width:72px;
+    height:72px;
+    border:1px solid rgba(255,255,255,.35);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 28px;
+    font-size:32px;
+    font-weight:700;
+  }
+
+  #process .process-step h4{
+    margin-bottom:18px;
+    color:#fff;
+  }
+
+  #process .process-step p{
+    max-width:520px;
+    margin:0 auto;
+    line-height:1.8;
+    color:rgba(255,255,255,.8);
+  }
+
+  @media(max-width:768px){
+
+    #process{
+      padding:80px 24px;
+    }
+
+    #process .section-title{
+      font-size:48px;
+    }
+
+    #process .process-grid{
+      grid-template-columns:1fr;
+      gap:50px;
+    }
+  }
+</style>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-label reveal">
+    <span class="lang-th">ขั้นตอนการสั่งซื้อ</span>
+    <span class="lang-en">How to Order</span>
+  </div>
+
+  <h2 class="section-title reveal">
+    <span class="lang-th">ง่าย รวดเร็ว<br><em>ไม่ยุ่งยาก</em></span>
+    <span class="lang-en">Simple, Fast<br><em>No Hassle</em></span>
+  </h2>
+
+  <div class="process-grid">
+
+    <div class="process-step reveal">
+      <div class="step-num">01</div>
+
+      <h4>
+        <span class="lang-th">แจ้งความต้องการ</span>
+        <span class="lang-en">Share Your Requirements</span>
+      </h4>
+
+      <p>
+        <span class="lang-th">
+          บอกขนาด ปริมาณ และการใช้งานที่ต้องการ ทางเราจะให้คำปรึกษาฟรีและแนะนำรูปแบบที่เหมาะสม
+        </span>
+
+        <span class="lang-en">
+          Tell us the size, quantity, and intended use.
+        </span>
+      </p>
+    </div>
+
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-num">02</div>
+
+      <h4>
+        <span class="lang-th">รับใบเสนอราคา</span>
+        <span class="lang-en">Receive a Quote</span>
+      </h4>
+
+      <p>
+        <span class="lang-th">
+          ทีมงานจะส่งใบเสนอราคาที่ชัดเจนและโปร่งใสภายใน 24 ชั่วโมง
+        </span>
+
+        <span class="lang-en">
+          Clear and transparent pricing within 24 hours.
+        </span>
+      </p>
+    </div>
+
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-num">03</div>
+
+      <h4>
+        <span class="lang-th">อนุมัติและผลิต</span>
+        <span class="lang-en">Approve & Produce</span>
+      </h4>
+
+      <p>
+        <span class="lang-th">
+          เมื่อยืนยันออร์เดอร์ เราเริ่มกระบวนการผลิตทันที
+        </span>
+
+        <span class="lang-en">
+          Production begins immediately after approval.
+        </span>
+      </p>
+    </div>
+
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-num">04</div>
+
+      <h4>
+        <span class="lang-th">จัดส่งถึงมือ</span>
+        <span class="lang-en">Delivered to You</span>
+      </h4>
+
+      <p>
+        <span class="lang-th">
+          จัดส่งตรงเวลาทั่วประเทศไทย พร้อมเอกสารครบถ้วน
+        </span>
+
+        <span class="lang-en">
+          Fast nationwide delivery with complete documentation.
+        </span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-label reveal">
+    <span class="lang-th">ทำไมต้องเลือกเรา</span>
+    <span class="lang-en">Why Choose Us</span>
+  </div>
+  <div class="why-grid">
+    <div class="why-list">
+      <div class="why-item reveal">
+        <div class="why-num">01</div>
+        <div class="why-content">
+          <h4><span class="lang-th">ประสบการณ์กว่า 30 ปี</span><span class="lang-en">30+ Years of Expertise</span></h4>
+          <p><span class="lang-th">ทีมงานผู้เชี่ยวชาญที่เข้าใจความต้องการของธุรกิจทุกขนาด พร้อมให้คำปรึกษาและแนะนำผลิตภัณฑ์ที่เหมาะสม</span><span class="lang-en">A seasoned team that understands business needs at every scale, ready to advise on the right packaging solution.</span></p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-num">02</div>
+        <div class="why-content">
+          <h4><span class="lang-th">ราคายุติธรรม ไม่มีต้นทุนซ่อน</span><span class="lang-en">Fair Pricing, No Hidden Costs</span></h4>
+          <p><span class="lang-th">ใบเสนอราคาที่ชัดเจนและโปร่งใส ไม่มีค่าใช้จ่ายแอบแฝง ลูกค้าทราบต้นทุนที่แท้จริงตั้งแต่ต้น</span><span class="lang-en">Clear and transparent quotations with no surprise charges — you know the true cost from day one.</span></p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-num">03</div>
+        <div class="why-content">
+          <h4><span class="lang-th">MOQ ต่ำ เริ่มต้นได้ทุกธุรกิจ</span><span class="lang-en">Low MOQ for All Business Sizes</span></h4>
+          <p><span class="lang-th">รับผลิตตั้งแต่จำนวนเล็ก เหมาะสำหรับ Startup และธุรกิจขนาดกลาง ไม่จำเป็นต้องสั่งจำนวนมาก</span><span class="lang-en">Suitable for startups and medium-sized businesses. We accept low-volume production with no need for large minimum orders.</span></p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-3">
+        <div class="why-num">04</div>
+        <div class="why-content">
+          <h4><span class="lang-th">ผลิตและจัดส่งตรงเวลา</span><span class="lang-en">On-Time Production & Delivery
+</span></h4>
+          <p><span class="lang-th">วางแผนการผลิตอย่างเป็นระบบ พร้อมติดตามงานทุกขั้นตอน เพื่อส่งมอบสินค้าได้ตามกำหนด</span><span class="lang-en">We follow a well-organized production process with continuous order tracking to ensure products are delivered on schedule.</span></p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-4">
+        <div class="why-num">05</div>
+        <div class="why-content">
+          <h4><span class="lang-th">ดูแลงานอย่างต่อเนื่อง</span><span class="lang-en">Ongoing Support</span></h4>
+          <p><span class="lang-th">พร้อมประสานงานและอัปเดตสถานะการผลิตให้ลูกค้า</span><span class="lang-en">We keep you updated throughout the production process.</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="why-highlight reveal">
+      <blockquote>
+        <span class="lang-th">"บรรจุภัณฑ์ที่ดี<br><em>คือการลงทุน</em><br>ที่คุ้มค่า"</span>
+        <span class="lang-en">"Great packaging<br>is an <em>investment</em><br>that pays off"</span>
+      </blockquote>
+      <p><span class="lang-th">ลูกค้าหลายธุรกิจไว้วางใจให้ SAHAPHAT PACKAGING ดูแลงานบรรจุภัณฑ์</span><span class="lang-en">Businesses trust SAHAPHAT PACKAGING for their packaging needs.</span></p>
+      <div style="margin-top: 2rem;">
+        <a href="#contact" class="btn-primary">
+          <span class="lang-th">ปรึกษาฟรี</span>
+          <span class="lang-en">Free Consultation</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label reveal">
+    <span class="lang-th">ติดต่อเรา</span>
+    <span class="lang-en">Contact Us</span>
+  </div>
+  <h2 class="section-title reveal">
+    <span class="lang-th">พร้อมให้คำ<em>ปรึกษา</em></span>
+    <span class="lang-en">Here to <em>Help</em></span>
+  </h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item reveal">
+        <div class="c-label"><span class="lang-th">ที่อยู่</span><span class="lang-en">Address</span></div>
+        <div class="c-value"><span class="lang-th">บริษัท สหภัทรแพคเกจจิ้ง จำกัด<br>402/17 หมู่ที่ 10 ตำบลคลองมะเดื่อ<br>อำเภอกระทุ่มแบน จ.สมุทรสาคร 74110</span><span class="lang-en">Sahaphat Packaging Co., Ltd.<br>402/17 Moo 10, Khlong Maduea Subdistrict,<br>Krathum Baen District, Samut Sakhon 74110, Thailand</span></div>
+      </div>
+      <div class="contact-item reveal reveal-delay-1">
+        <div class="c-label"><span class="lang-th">โทรศัพท์</span><span class="lang-en">Phone</span></div>
+        <div class="c-value">082 954 9924</div>
+        <div class="c-sub"><span class="lang-th">จันทร์–เสาร์ 8:00–17:00</span><span class="lang-en">Mon–Sat 8:00–17:00</span></div>
+      </div>
+      <div class="contact-item reveal reveal-delay-2">
+        <div class="c-label">Email</div>
+        <div class="c-value">sahaphatpackaing2021@gmail.com</div>
+      </div>
+      <div class="contact-item reveal reveal-delay-3">
+        <div class="c-label">LINE</div>
+        <div class="c-value">082 954 9924</div>
+        <div class="c-sub"><span class="lang-th">ตอบกลับเร็วที่สุด</span><span class="lang-en">Fastest Response</span></div>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15510.05083032821!2d100.2845281362534!3d13.626546771161728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8a83d1d6d89122e1%3A0x7ce8f10694297881!2z4Lia4Lij4Li04Lip4Lix4LiXIOC4quC4q-C4oOC4seC4l-C4o-C5geC4nuC4hOC5gOC4geC4iOC4iOC4tOC5ieC4hyDguIjguLPguIHguLHguJQ!5e0!3m2!1sth!2sth!4v1778642394754!5m2!1sth!2sth" width="100%" height="300" style="border:0; display:block; max-width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="reveal">
+      <div class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label><span class="lang-th">ชื่อ-นามสกุล</span><span class="lang-en">Full Name</span> *</label>
+            <input type="text" id="fname" placeholder="">
+          </div>
+          <div class="form-group">
+            <label><span class="lang-th">บริษัท</span><span class="lang-en">Company</span></label>
+            <input type="text" id="fcompany" placeholder="">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span class="lang-th">โทรศัพท์</span><span class="lang-en">Phone</span> *</label>
+            <input type="tel" id="fphone" placeholder="">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="femail" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label><span class="lang-th">สินค้าที่สนใจ</span><span class="lang-en">Product of Interest</span></label>
+          <select id="fproduct">
+            <option value="" disabled selected><span class="lang-th">เลือกประเภทกล่อง</span></option>
+            <option>กล่องลูกฟูก / Corrugated Box</option>
+            <option>กล่องพิมพ์โลโก้ / Custom Printed Box</option>
+            <option>กล่องของขวัญ / Gift Box</option>
+            <option>กล่องอาหาร / Food Grade Box</option>
+            <option>กล่องอีคอมเมิร์ซ / E-Commerce Box</option>
+            <option>กล่องอุตสาหกรรม / Industrial Box</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label><span class="lang-th">รายละเอียดเพิ่มเติม</span><span class="lang-en">Additional Details</span></label>
+          <textarea id="fmessage" placeholder=""></textarea>
+        </div>
+        <p class="form-note">* <span class="lang-th">กรุณากรอกข้อมูลที่จำเป็น</span><span class="lang-en">Required fields</span></p>
+        <button class="btn-primary" onclick="submitForm()" style="align-self: flex-start; border:none; font-family: inherit;">
+          <span class="lang-th">ส่งข้อความ</span>
+          <span class="lang-en">Send Message</span>
+        </button>
+        <div class="success-msg" id="successMsg">
+          ✓ <span class="lang-th">ส่งข้อความเรียบร้อยแล้ว ทีมงานจะติดต่อกลับโดยเร็ว</span>
+          <span class="lang-en">Message sent! Our team will get back to you shortly.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <a href="#" class="logo" style="font-size:1.3rem;">SAHAPHAT <span>PACKAGING</span></a>
+    <p class="footer-copy" style="margin-top: 0.5rem;">
+      © 2025 SAHAPHAT PACKAGING Co., Ltd. <span class="lang-th">สงวนลิขสิทธิ์</span><span class="lang-en">All rights reserved.</span>
+    </p>
+  </div>
+  <div class="footer-links">
+    <a href="#about"><span class="lang-th">เกี่ยวกับเรา</span><span class="lang-en">About</span></a>
+    <a href="#products"><span class="lang-th">สินค้า</span><span class="lang-en">Products</span></a>
+    <a href="#contact"><span class="lang-th">ติดต่อ</span><span class="lang-en">Contact</span></a>
+  </div>
+  <div class="footer-social">
+    <a href="#" class="social-btn">FB</a>
+    <a href="#" class="social-btn">IG</a>
+    <a href="#" class="social-btn">LN</a>
+  </div>
+</footer>
+
+<script>
+  // Language toggle
+  let isEn = false;
+  function toggleLang() {
+    isEn = !isEn;
+    document.body.classList.toggle('en', isEn);
+    document.getElementById('langBtn').textContent = isEn ? 'TH' : 'EN';
+  }
+
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Form
+  function submitForm() {
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    if (!name || !phone) {
+      alert(isEn ? 'Please fill in required fields.' : 'กรุณากรอกข้อมูลที่จำเป็น');
+      return;
+    }
+    document.getElementById('successMsg').style.display = 'block';
+    document.getElementById('fname').value = '';
+    document.getElementById('fcompany').value = '';
+    document.getElementById('fphone').value = '';
+    document.getElementById('femail').value = '';
+    document.getElementById('fmessage').value = '';
+    setTimeout(() => { document.getElementById('successMsg').style.display = 'none'; }, 5000);
+  }
+</script>
+</body>
+</html>
